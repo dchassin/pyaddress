@@ -264,7 +264,7 @@ def ip2coordinates_cli(dstk, options, inputs, output):
         if ip_match is not None:
             input_ips.append(ip_match.group(0))
         else:
-            print 'No match'
+            print('No match')
 
     result = dstk.ip2coordinates(input_ips)
 
@@ -370,7 +370,7 @@ def file2text_cli(dstk, options, inputs, output):
                 output.write('--File--: '+file_name+"\n")
             result = dstk.file2text(file_name, file_data)
 
-            print result
+            print(result)
     return
 
 def text2places_cli(dstk, options, inputs, output):
@@ -420,7 +420,7 @@ def html2text_cli(dstk, options, inputs, output):
 
     if options['from_stdin']:
         result = dstk.html2text("\n".join(inputs))
-        print result['text']
+        print(result['text'])
         return
 
     for file_name in inputs:
@@ -435,14 +435,14 @@ def html2text_cli(dstk, options, inputs, output):
             if options['showHeaders']:
                 output.write('--File--: '+file_name+"\n")
             result = dstk.html2text(file_data)
-            print result['text']
+            print(result['text'])
     return
 
 def text2sentences_cli(dstk, options, inputs, output):
 
     if options['from_stdin']:
         result = dstk.text2sentences("\n".join(inputs))
-        print result['sentences']
+        print(result['sentences'])
         return
 
     for file_name in inputs:
@@ -457,7 +457,7 @@ def text2sentences_cli(dstk, options, inputs, output):
             if options['showHeaders']:
                 output.write('--File--: '+file_name+"\n")
             result = dstk.text2sentences(file_data)
-            print result['sentences']
+            print(result['sentences'])
 
     return
 
@@ -465,7 +465,7 @@ def html2story_cli(dstk, options, inputs, output):
 
     if options['from_stdin']:
         result = dstk.html2story("\n".join(inputs))
-        print result['story']
+        print(result['story'])
         return
 
     for file_name in inputs:
@@ -480,7 +480,7 @@ def html2story_cli(dstk, options, inputs, output):
             if options['showHeaders']:
                 output.write('--File--: '+file_name+"\n")
             result = dstk.html2story(file_data)
-            print result['story']
+            print(result['story'])
 
     return
 
@@ -580,26 +580,26 @@ def get_file_or_url_contents(file_name):
 
 def print_usage(message=''):
 
-    print message
-    print "Usage:"
-    print "python dstk.py <command> [-a/--api_base 'http://yourhost.com'] [-h/--show_headers] <inputs>"
-    print "Where <command> is one of:"
-    print "  ip2coordinates        (lat/lons for IP addresses)"
-    print "  street2coordinates    (lat/lons for postal addresses)"
-    print "  coordinates2politics  (country/state/county/constituency/etc for lat/lon)"
-    print "  text2places           (lat/lons for places mentioned in unstructured text)"
-    print "  file2text             (PDF/Excel/Word to text, and OCR on PNG/Jpeg/Tiff images)"
-    print "  text2sentences        (parts of the text that look like proper sentences)"
-    print "  html2text             (text version of the HTML document)"
-    print "  html2story            (text version of the HTML with no boilerplate)"
-    print "  text2people           (gender for people mentioned in unstructured text)"
-    print "  text2times            (times and dates mentioned in unstructured text)"
-    print "If no inputs are specified, then standard input will be read and used"
-    print "See http://www.datasciencetoolkit.org/developerdocs for more details"
-    print "Examples:"
-    print "python dstk.py ip2coordinates 67.169.73.113"
-    print "python dstk.py street2coordinates \"2543 Graystone Place, Simi Valley, CA 93065\""
-    print "python dstk.py file2text scanned.jpg"
+    print(message)
+    print("Usage:")
+    print("python dstk.py <command> [-a/--api_base 'http://yourhost.com'] [-h/--show_headers] <inputs>")
+    print("Where <command> is one of:")
+    print("  ip2coordinates        (lat/lons for IP addresses)")
+    print("  street2coordinates    (lat/lons for postal addresses)")
+    print("  coordinates2politics  (country/state/county/constituency/etc for lat/lon)")
+    print("  text2places           (lat/lons for places mentioned in unstructured text)")
+    print("  file2text             (PDF/Excel/Word to text, and OCR on PNG/Jpeg/Tiff images)")
+    print("  text2sentences        (parts of the text that look like proper sentences)")
+    print("  html2text             (text version of the HTML document)")
+    print("  html2story            (text version of the HTML with no boilerplate)")
+    print("  text2people           (gender for people mentioned in unstructured text)")
+    print("  text2times            (times and dates mentioned in unstructured text)")
+    print("If no inputs are specified, then standard input will be read and used")
+    print("See http://www.datasciencetoolkit.org/developerdocs for more details")
+    print("Examples:")
+    print("python dstk.py ip2coordinates 67.169.73.113")
+    print("python dstk.py street2coordinates \"2543 Graystone Place, Simi Valley, CA 93065\"")
+    print("python dstk.py file2text scanned.jpg")
 
     exit(-1)
 

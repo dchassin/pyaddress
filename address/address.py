@@ -334,13 +334,13 @@ class Address:
             return False
         # Multi word cities
         if self.city is not None and self.street_suffix is None and self.street is None:
-            print "Checking for multi part city", token.lower(), token.lower() in shortened_cities.keys()
+            # print "Checking for multi part city", token.lower(), token.lower() in shortened_cities.keys()
             if token.lower() + ' ' + self.city in self.parser.cities:
                 self.city = self._clean((token.lower() + ' ' + self.city).capitalize())
                 return True
             if token.lower() in shortened_cities.keys():
                 token = shortened_cities[token.lower()]
-                print "Checking for shorted multi part city", token.lower() + ' ' + self.city
+                # print "Checking for shorted multi part city", token.lower() + ' ' + self.city
                 if token.lower() + ' ' + self.city.lower() in self.parser.cities:
                     self.city = self._clean(token.capitalize() + ' ' + self.city.capitalize())
                     return True
@@ -694,4 +694,4 @@ class DSTKConfidenceTooLowException(Exception):
 
 if __name__ == "__main__":
     ap = AddressParser()
-    print ap.parse_address(" ".join(sys.argv[1:]))
+    print(ap.parse_address(" ".join(sys.argv[1:])))
