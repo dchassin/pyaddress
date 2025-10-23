@@ -280,7 +280,7 @@ class Address:
 
     def check_zip(self, token):
         """
-        Returns true if token is matches a zip code (5 numbers). Zip code must be the last token in an address (minus anything
+        Returns true if token is matches a zip code (5 numbers or 5+4 numbers). Zip code must be the last token in an address (minus anything
         removed during preprocessing such as --2 units.
         """
         if self.zip is None:
@@ -290,7 +290,9 @@ class Address:
                 # print "zip check", len(token) == 5, re.match(r"\d{5}", token)
             if len(token) == 5 and re.match(r"\d{5}", token):
                 self.zip = self._clean(token)
-
+                return True
+            if re.match(r"\d{5}-?\d{4}", token):
+                self.zip = self._clean(token)
                 return True
         return False
 
