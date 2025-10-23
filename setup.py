@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='address',
-    version='0.1.1',
+    version='0.1.2',
     url='https://github.com/SwoopSearch/pyaddress',
     author='Swoop Search LLC, Josh Gachnang, Rob Jauquet',
     author_email='Josh@SwoopSrch.com',
@@ -15,7 +15,7 @@ setup(
     classifiers=[
         "License :: OSI Approved :: BSD License",
         "Natural Language :: English",
-        "Programming Language :: Python :: 2 :: Only",
+        "Programming Language :: Python :: 3 :: Only",
         "Topic :: Software Development :: Libraries",
         "Topic :: Text Processing",
     ],
