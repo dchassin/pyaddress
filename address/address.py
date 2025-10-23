@@ -4,7 +4,7 @@
 import re
 import csv
 import os
-import dstk
+from . import dstk
 import sys
 
 # Keep lowercase, no periods
