@@ -25,7 +25,7 @@ try:
 except ImportError:
     import json
 import os
-import httplib
+import http.client as httplib
 import mimetypes
 import re
 import csv
