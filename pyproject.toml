@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tools.setuptools.packages.find]
+where = ["address"]
+
+[project]
+name = "pyaddress"
+version = "0.1.2"
+description = "address is an address parsing library, taking the guesswork out of using addresses in your applications."
+authors = [
+    {name = "Swoop Search LLC, Josh Gachnang, Rob Jauquet <josh@swoopsrch.com>"},
+    ]
+maintainers = [
+    {name = "Swoop Search LLC, Josh Gachnang, Rob Jauquet <josh@swoopsrch.com>"},
+    ]
+readme = "README.rst"
+requires-python = ">= 3.10"
+dependencies = ["numpy","cvxpy","pypower"]
+keywords = ["python","address"]
+license = {text="BSD License"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Libraries",
+    ]
+
+[tool.setuptools.package-data]
+address = ["*.csv"]
+
+[project.urls]
+Homepage = "https://github.com/swoopsearch/pyaddress"
+Documentation = "https://github.com/swoopsearch/pyaddress"
+Repository = "https://github.com/swoopsearch/pyaddress.git"
+Issues = "https://github.com/github.com/swoopsearch/pyaddress/issues"
